@@ -3,14 +3,10 @@ const heading = document.getElementById('main');
 const form = document.getElementById('form');
 const search = document.getElementById('search');
 
-// console.log(apiUrl);
-
-// findUser("Tire11");
 
 async function findUser(username) {
     const res = await fetch(apiUrl + username);
     const resData = await res.json();
-    // console.log(resData);
     generateUserCard(resData);
     collectRepos(username);
 }
@@ -21,19 +17,6 @@ async function collectRepos(username) {
     console.log(resData)
     joinReposToCard(resData);
 }
-
-// function joinReposToCard(repos) {
-//     const myRepos = document.getElementById("repos");
-//     repos.forEach((repo) => {
-//         const myRepo = document.createElement("a");
-//         myRepo.classList.add("repo");
-//         myRepo.href = repo.html_url;
-//         myRepo.target = "_blank";
-//         myRepo.style = "text-decoration: none; margin: 5px 0; display: flex;"
-//         myRepo.innerText = repo.name;
-//         myRepos.appendChild(myRepo);
-//     });
-// }
 
 function joinReposToCard(myRepos){
     let product = "";
